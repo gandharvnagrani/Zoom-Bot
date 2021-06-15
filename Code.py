@@ -13,32 +13,34 @@ def login(m_id, m_pswd):
     
     #locates and clicks the join button for a meeting
     join_button = pyautogui.locateCenterOnScreen('Join.png')
-    pyautogui.moveTo(join_button.x/2, join_button.y/2)
-    pyautogui.click() #coordiantes are divided by 2 because macOS takes a screenshot that is double the deafult resolution
+    pyautogui.moveTo(join_button.x/2, join_button.y/2) #For Non-retina displays: pyautogui.moveTo(join_button) 
+    pyautogui.click() #coordiantes are divided by 2 because macOS w retina displays takes a screenshot that is double the deafult resolution
+    
+    
     
     time.sleep(1)
     
     #entering meeting id
     meeting_button = pyautogui.locateCenterOnScreen('id1.png')
-    pyautogui.moveTo(meeting_button.x/2, meeting_button.y/2)
+    pyautogui.moveTo(meeting_button.x/2, meeting_button.y/2) #For Non-retina displays: pyautogui.moveTo(meeting_button) 
     pyautogui.click()
     pyautogui.write(m_id)
     
     time.sleep(1)
     #turn off audio and video - optional
     A_button = pyautogui.locateCenterOnScreen('auv.png')
-    pyautogui.click(A_button.x/2,A_button.y/2)
+    pyautogui.click(A_button.x/2,A_button.y/2) #For Non-retina displays: pyautogui.click(A_button) 
     V_button = pyautogui.locateCenterOnScreen('auv.png')
-    pyautogui.click(V_button.x/2,V_button.y/2)
+    pyautogui.click(V_button.x/2,V_button.y/2) #For Non-retina displays: pyautogui.click(V_button) 
     
     #Join meeting
     join_2 = pyautogui.locateCenterOnScreen('Join_2.png')
-    pyautogui.click(join_2.x/2, join_2.y/2)
+    pyautogui.click(join_2.x/2, join_2.y/2) #For Non-retina displays: pyautogui.click(join_2) 
     
     time.sleep(1)
     #Enter Passcode
     pswd = pyautogui.locateCenterOnScreen('pswd.png')
-    pyautogui.click(pswd.x/2, pswd.y/2)
+    pyautogui.click(pswd.x/2, pswd.y/2) #For Non-retina displays: pyautogui.click(pswd) 
     pyautogui.write(m_pswd)
     pyautogui.press('enter')
     
